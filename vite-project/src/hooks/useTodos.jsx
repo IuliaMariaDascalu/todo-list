@@ -42,12 +42,9 @@ export const useTodos = () => {
 
     const deleteTodo = useMutation({
         mutationFn: async (todoId) => {
-            const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${todoId}`, {
+            await fetch(`https://jsonplaceholder.typicode.com/todos/${todoId}`, {
                 method: 'DELETE',
             });
-            if (!response.ok) {
-                throw new Error('Failed to delete todo');
-            }
             return todoId;
         },
         onSuccess: (deletedTodoId) => {
