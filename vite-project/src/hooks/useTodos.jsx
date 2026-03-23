@@ -66,16 +66,17 @@ export const useTodos = () => {
                         'Content-type': 'application/json; charset=UTF-8',
                     },
                 });
-                console.log("Add Todo Response:", response.json());
+            const data = await response.json();
+            console.log("Add Todo Response:", data);
             if (!response.ok) {
                 throw new Error('Failed to add todo');
             }
-            return response.json();
+            return data;
         },
-        onSuccess: () => {
-            console.log("New todo added:", newTodo);
+        onSuccess: (newTodoData) => {
+            console.log("New todo added:", newTodoData);
             queryClient.setQueryData(['todos'], (oldTodos = []) => {
-                return [newTodo, ...oldTodos];
+                return [newTodoData, ...oldTodos];
             });
         },
     });

@@ -4,10 +4,13 @@ export const Container = styled.div`
     background-color: #0f0c01;
     border: 1px solid black;
     border-radius: 2rem;
-    padding: 2rem;
-    flex: 1;
-    height: 45vh;
-    overflow-y: scroll;
+    padding: 1.5rem;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    max-height: 100%;
+    overflow-y: auto;
+    box-sizing: border-box;
 `;
 
 export const Card = styled.div`
@@ -15,8 +18,10 @@ export const Card = styled.div`
     border: 1px solid black;
     border-radius: 2rem;
     padding: 2rem;
-    flex: 1;
-    margin: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
 `;
 
 export const Avatar = styled.img`
@@ -50,19 +55,14 @@ export const CardDescription = styled.p`
 export const Status = styled.p`
     margin: 0;
     flex: .25;
-    text-align: ${props => props.centered ? 'center' : 'end'};
+    text-align: ${props => props.centered ? 'center' : 'start'};
     color: ${props => props.completed ? 'green' : 'red'};
     font-weight: bold;
+    font-size: 14px
 `;
 
 export const Title = styled.h2`
-    margin: 0;
     color: white;
     text-align: start;
-    font-size: 28px;
 }
 `;
-
-Status.defaultProps = {
-    completed: false,
-};

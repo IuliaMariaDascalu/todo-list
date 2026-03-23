@@ -1,15 +1,18 @@
 import FriendsList from "../features/friends/FriendsList";
 import TodoList from "../features/todo/TodoList";
-import {StyledCalendar, Container} from "./Home.styles";
+import {StyledCalendar, TopRow, BottomRow} from "./Home.styles";
 
 export default function Home() {
     return (
-        <Container>
-            <div style={{display: 'flex', gap: '.5rem', height: '45vh'}}>
+        <>
+            <TopRow>
                 <StyledCalendar />
-                <FriendsList/>
-            </div> 
-            <TodoList/>
-        </Container>
+                <FriendsList />
+            </TopRow>
+            <BottomRow>
+                <TodoList />
+            </BottomRow>
+        
+        </>
     );
 }

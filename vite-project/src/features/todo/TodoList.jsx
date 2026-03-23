@@ -1,4 +1,5 @@
-import { Container, ContainerRow, Description, Status, Title } from "./styles";
+import { Container, ContainerRow, Description, Status } from "./styles";
+import {Title} from '../../styles/title';
 import { useCurrentUser } from "../../hooks/useCurrentUser";
 import { useTodos } from "../../hooks/useTodos";
 import Button from "../../components/Button/Button";
@@ -39,10 +40,10 @@ export default function TodoList() {
 
     return (
         <Container>
-            <div style={{display: 'flex', justifyContent: 'space-between', margin: '.5rem 0 1rem'}}>
+            <div style={{display: 'flex', justifyContent: 'space-between', margin: '.5rem 0 1.5rem'}}>
                 <Title>My ToDo List</Title>
                 <Button 
-                    type="success"
+                    type="primary"
                     onClick={() => {handleAdd()}}>+</Button>
             </div>
             {todoData
@@ -51,10 +52,12 @@ export default function TodoList() {
                 <ContainerRow key={filteredTodo.id}>
                     <Description>{filteredTodo.title}</Description>
                     <Status completed={filteredTodo.completed}>
-                        {filteredTodo.completed ? 'Completed' : 'Not Completed'}
+                        {filteredTodo.completed ? 'completed' : 'not completed'}
                     </Status>
-                    <Button type="warning" onClick={() => handleEdit(filteredTodo)}>Edit</Button>
-                    <Button type="error" onClick={() => handleDelete(filteredTodo.id)}>Delete</Button>
+                    <div style={{display:"flex", gap:"0.5rem"}}>
+                        <Button type="secondary" onClick={() => handleEdit(filteredTodo)}>Edit</Button>
+                        <Button onClick={() => handleDelete(filteredTodo.id)}>Delete</Button>
+                    </div>
                 </ContainerRow>
             ))}
         </Container>

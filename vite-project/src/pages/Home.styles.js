@@ -7,7 +7,7 @@ export const StyledCalendar = styled(Calendar)`
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     background-color: #0f0c01;
     padding: 20px;
-    flex: .4;
+    flex: .3;
 
     .react-calendar__tile {
         background: #0f0c01;
@@ -39,11 +39,17 @@ export const StyledCalendar = styled(Calendar)`
     }
 `;
 
-export const Container = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 1rem;
-    justify-content: stretch;
-    height: 100vh;
+export const TopRow = styled.div`
+  display: flex;
+  gap: 0.75rem;
+  flex: 1;
+  min-height: 0;
+  max-height: 38%;
+  overflow: hidden;
+`;
+
+export const BottomRow = styled.div`
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
 `;

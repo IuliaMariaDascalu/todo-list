@@ -5,9 +5,13 @@ export const Container = styled.div`
     flex-direction: column;
     background-color: #0f0c01;
     border-radius: 2rem;
-    padding: 2rem;
-    flex: .6;
-    overflow-y: scroll;
+    padding: 1.5rem;
+    flex: 1;
+    height: 100%;
+    min-height: 0;
+    max-height: 100%;
+    overflow-y: auto;
+    box-sizing: border-box;
 `;
 
 export const Row = styled.div`
@@ -33,9 +37,21 @@ export const Avatar = styled.img`
 export const Name = styled.h4`
     margin: 0;
     flex: 0.25;
+    color: #d4d3cf;
 `;
 
 export const Text = styled.p`
     margin: 0;
     color: white;
+    font-size: 14px;
+`;
+
+export const CloseButton = styled.button`
+    background-color: transparent;
+    border: white solid 1px;
+    border-radius: 50%;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
 `;
