@@ -4,23 +4,39 @@ export const StyledButton = styled.button`
     padding: 10px 20px;
     background-color: ${props => {
         switch (props.type) {
-            case 'success':
-                return 'green';
-            case 'warning':
-                return '#807a03';
-            case 'error':
-                return 'red';
+            case 'primary':
+                return '#3b60a0';
+            case 'secondary':
+                return '#8f8f8f';
             default:
-                return 'gray';
+                return '#0f0c01';
         }
     }};
     color: white;
-    border: none;
+    border: 1px solid ${props => {
+        switch (props.type) {
+            case 'primary':
+                return '#3b60a0';
+            case 'secondary':
+                return '#8f8f8f';
+            default:
+                return 'white';
+        }
+    }};
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
 
     &:hover {
-        background-color: #a69307;
+        background-color: ${props => {
+            switch (props.type) {
+                case 'primary':
+                    return '#334f84';
+                case 'secondary':
+                    return '#878784';
+                default:
+                    return 'black';
+            }
+        }};
     }
 `;

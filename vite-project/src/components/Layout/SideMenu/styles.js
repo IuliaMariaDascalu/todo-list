@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 
 export const Container = styled.div`
-  width: 250px;
-  background: #111827;
+  width: 150px;
+  background: #0f0c01;
   color: white;
   display: flex;
   flex-direction: column;
